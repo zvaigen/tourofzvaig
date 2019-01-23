@@ -1,8 +1,8 @@
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav *ngIf= "authService.isAuth" #drawer class="sidenav" fixedInViewport="true"
-      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-      [mode]="(isHandset$ | async) ? 'over' : 'side'"
-      [opened]="!(isHandset$ | async)">
+  <mat-sidenav *ngIf= "authService.authenticated" #drawer class="sidenav" fixedInViewport="true"
+			   [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+			   [mode]="(isHandset$ | async) ? 'over' : 'side'"
+			   [opened]="!(isHandset$ | async)">
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
       <a mat-list-item routerLink="/asteroids-search">Asteroids Search</a>
@@ -22,7 +22,7 @@
       </button>
       <span>TourOfZvaig</span>
       <span class="spacer" ></span>
-      <div *ngIf= "authService.isAuth else notAuthenticated">
+      <div *ngIf= "authService.authenticated else notAuthenticated">
         <button (click)="Profile()" >Profile</button>
         <button (click)="logout()">Logout</button>
       </div> 
