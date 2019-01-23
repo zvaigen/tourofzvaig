@@ -1,0 +1,41 @@
+<div class="profile-container" *ngIf="($currUser | async) as currUser">
+
+    <span>
+      hello <strong> {{currUser.email }} </strong> <br> 
+      Please fill your info:  
+    </span>
+  <form [formGroup]="userProfileForm" (ngSubmit)="onSubmit()" *ngIf="($currUser | async) as currUser">
+    <label>
+      First Name:
+      <input type="text" formControlName="firstName" required>
+    </label>
+    <label>
+      Last Name:
+      <input type="text" formControlName="lastName" required>
+    </label>
+    <label>
+      Adress:
+      <input type="text" formControlName="adress" required>
+    </label>
+    <label>
+      israeili-ID:
+      <input type="text" formControlName="israeiliID" required>
+    </label>
+    <label>
+      Birthdate:
+      <input type="text" formControlName="birthdate" required>
+    </label>
+    <label>
+      Phone:
+      <input type="text" formControlName="phone" required>
+    </label>
+    <label>
+      Profile picture:
+      <input type="text" formControlName="profilepicture" required>
+    </label>
+  
+    <button type="submit" [disabled]="!userProfileForm.valid">Submit</button>
+  </form>
+  </div>
+
+  

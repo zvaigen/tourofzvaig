@@ -1,0 +1,14 @@
+  <div class="asteroids-container">
+      <div class="asteroid-container"  *ngFor="let asteroid of asteroids" (click)="openDialog(asteroid)">
+        <h4>{{ asteroid.id }}</h4>
+        <h4>{{ asteroid.name }}</h4>
+        <button class="delete" title="delete asteroid"
+        (click)="deleteAsteroid(asteroid)">x</button>
+      </div>
+
+      <mat-paginator #paginator [length]="100"
+            [pageSize]="10" (page)="onPageChange()">
+      </mat-paginator>
+  </div>
+
+

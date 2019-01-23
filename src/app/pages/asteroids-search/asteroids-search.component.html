@@ -1,0 +1,11 @@
+<h2>Asteroid on roids</h2>
+<div>
+    <div class="row">
+        <div class="main-wrapper">
+            <app-search-field (searchAction)="getAsteroids($event)" (resetAction)="handleResetAction()" (searchAsteroidAction)="filterAsteroids($event)"></app-search-field>
+            <app-countriestable [asteroids]="filteredAsteroids" (removeAsteroidAction)="deleteAsteroid($event)"></app-countriestable>
+        </div>
+    </div>
+</div>
+
+

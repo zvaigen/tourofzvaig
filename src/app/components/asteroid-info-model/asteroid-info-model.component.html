@@ -1,0 +1,18 @@
+
+<h2 mat-dialog-title>Asteroid id: {{data.id}}</h2>
+
+<mat-dialog-content>
+  <span>
+    Asteroid Name: {{data.name}} <br> <br>
+    Approach Earth Date: {{data.close_approach_data[0].close_approach_date}} <br> <br>
+    Velocity(kph): {{data.close_approach_data[0].relative_velocity.kilometers_per_hour}} <br> <br>
+  
+  </span>
+
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <!-- <button class="mat-raised-button"(click)="close()">Close</button>
+  <button class="mat-raised-button mat-primary"(click)="save()">Save</button> -->
+</mat-dialog-actions>
+

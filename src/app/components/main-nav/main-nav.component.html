@@ -1,0 +1,36 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav *ngIf= "authService.isAuth" #drawer class="sidenav" fixedInViewport="true"
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="!(isHandset$ | async)">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item routerLink="/asteroids-search">Asteroids Search</a>
+      <a mat-list-item routerLink="/user-profile">Profile page</a>
+      <a mat-list-item routerLink="/last-searches">Last-Searches</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>TourOfZvaig</span>
+      <span class="spacer" ></span>
+      <div *ngIf= "authService.isAuth else notAuthenticated">
+        <button (click)="Profile()" >Profile</button>
+        <button (click)="logout()">Logout</button>
+      </div> 
+      <ng-template #notAuthenticated>
+        <button (click)="register()">Register</button>
+        <button (click)="login()">LogIn</button>
+      </ng-template> 
+    </mat-toolbar>
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>

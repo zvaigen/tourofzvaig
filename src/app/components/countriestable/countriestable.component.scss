@@ -1,0 +1,10 @@
+.asteroids-container{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  .asteroid-container{
+    background-color: yellow;
+    width: 300px;
+    margin: 20px;
+  }
+}
