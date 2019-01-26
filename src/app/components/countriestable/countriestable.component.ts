@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter, ViewChild } from '@angular/core';
 import { Asteroid } from '../../models/asteroid';
-import { MatPaginator, MatDialog } from '@angular/material';
+import { MatDialog } from '@angular/material';
 import { AsteroidInfoModelComponent } from '../asteroid-info-model/asteroid-info-model.component';
 
 
@@ -15,7 +15,7 @@ export class CountriestableComponent implements OnInit {
   
   @Input() asteroids: Asteroid[] = [];
   @Output() removeAsteroidAction = new EventEmitter();
-  @ViewChild('paginator') paginator: MatPaginator;
+  // @ViewChild('paginator') paginator: MatPaginator;
   constructor(public dialog: MatDialog) { }
 
   ngOnInit() {

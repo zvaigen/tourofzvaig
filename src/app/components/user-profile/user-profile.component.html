@@ -1,4 +1,4 @@
-<div class="profile-container" *ngIf="($currUser | async) as currUser">
+<div class="profile-container" *ngIf="($currUser | async) as currUser; else loading">
 
     <span>
       hello <strong> {{currUser.email }} </strong> <br> 
@@ -37,5 +37,9 @@
     <button type="submit" [disabled]="!userProfileForm.valid">Submit</button>
   </form>
   </div>
+
+  <ng-template> 
+    Loading User
+  </ng-template>
 
   

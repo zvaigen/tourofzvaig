@@ -21,7 +21,7 @@ export class AsteroidsSearchComponent implements OnInit {
   }
 
   getAsteroids(obj:any): void {
-    if(localStorage.length > 5){
+    if(localStorage.length > 10){
       localStorage.removeItem("date"+(localStorage.length-1));
       localStorage.setItem("date"+localStorage.length, obj.startDate +" "+ obj.endDate);
     }

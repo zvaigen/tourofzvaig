@@ -13,6 +13,8 @@ export class AppComponent implements OnInit {
 			authDomain: 'fir-skills-70d4c.firebaseapp.com',
 			databaseURL: 'https://fir-skills-70d4c.firebaseio.com',
 			projectId: 'fir-skills-70d4c',
+			storageBucket: "fir-skills-70d4c.appspot.com",
+    		messagingSenderId: "42530576930"
 		} )
 	}
 

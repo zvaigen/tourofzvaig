@@ -44,17 +44,6 @@ export class MainNavComponent {
     });
   }
 
-  login(){
-    this.router.navigate(['/signin']);
-  }
-
-  register(){
-    this.router.navigate(['/signup']);
-  }
-
-  Profile(){
-    this.router.navigate(['/user-profile']);
-  }
 
   logout() {
 		this.authService.logout();

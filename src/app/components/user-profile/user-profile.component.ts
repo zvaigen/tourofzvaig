@@ -28,22 +28,29 @@ export class UserProfileComponent implements OnInit {
 			israeiliID: [ '', Validators.required ],
 			birthdate: [ '', Validators.required ],
 			phone: [ '', Validators.required, Validators.minLength( 9 ) ],
-			profilepicture: [ '', Validators.required ]
+			profilepicture: [ '',  ]
 
 		} )
 	}
 
 	ngOnInit() {
-		// this.createForm()
-		// this.$currUser = this.authService.getUser();
-		// // Make a copy of the current user's object to place in form fields
-		// ( <any>Object ).assign( this.user, this.$currUser )
-		// this.userProfileForm.patchValue( this.user )
-		// console.log( this.user )
+		this.createForm();
+		this.$currUser = this.authService.getUser();
+		// Make a copy of the current user's object to place in form fields
+		( <any>Object ).assign( this.user, this.$currUser )
+		this.userProfileForm.patchValue( this.user )
+		debugger
+		console.log( this.user )
+		debugger
 	}
 
 	onSubmit() {
+		if(this.userProfileForm.valid){
+		this.user.firstName = this.userProfileForm.value.firstName;
 
+		console.log(this.user.firstName);
+		}
+		
 	}
 
 }

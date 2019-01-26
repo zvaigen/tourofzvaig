@@ -16,6 +16,7 @@ import { MatPaginatorModule } from '@angular/material/paginator'
 import { MatDatepickerModule } from '@angular/material/datepicker'
 import { MatNativeDateModule, MatToolbarModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material'
 import { MatDialogModule } from '@angular/material/dialog'
+import { MatTableModule } from '@angular/material/table';
 import { AsteroidInfoModelComponent } from './components/asteroid-info-model/asteroid-info-model.component'
 import { MainNavComponent } from './components/main-nav/main-nav.component'
 import { LayoutModule } from '@angular/cdk/layout'
@@ -26,7 +27,7 @@ import { AuthService } from './auth/auth.service'
 import { AuthGuardService } from './auth/auth-guard.service'
 import { UserProfileComponent } from './components/user-profile/user-profile.component'
 import { LastSearchesComponent } from './components/last-searches/last-searches.component'
-import { CookieService } from 'angular2-cookie/services/cookies.service'
+
 
 @NgModule( {
 	declarations: [
@@ -61,9 +62,10 @@ import { CookieService } from 'angular2-cookie/services/cookies.service'
 		MatToolbarModule,
 		MatSidenavModule,
 		MatIconModule,
-		MatListModule
+		MatListModule,
+		MatTableModule
 	],
-	providers: [ MatDatepickerModule, AuthService, AuthGuardService, CookieService ],
+	providers: [ MatDatepickerModule, AuthService, AuthGuardService], 
 	bootstrap: [ AppComponent ],
 	entryComponents: [ AsteroidInfoModelComponent, SearchHistoryModelComponent ]
 } )

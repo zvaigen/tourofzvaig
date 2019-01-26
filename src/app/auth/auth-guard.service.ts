@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core'
 import { AuthService } from './auth.service'
 import { CanActivate, Router, } from '@angular/router'
-import { map } from 'rxjs/operators'
 
 @Injectable( {
 	providedIn: 'root'
@@ -11,12 +10,10 @@ export class AuthGuardService implements CanActivate {
 	}
 
 	public canActivate(): any {
-		return this.authService.userLoggedIn.pipe( map( ( authenticated ) => {
-			if ( !authenticated ) {
-				this.router.navigate( [ 'signin' ] )
-			}
-
-			return authenticated
-		} ) )
+    if (localStorage.getItem('user')) { return true; }
+    console.log('access denied!')
+    this.router.navigate(['/signin']);
+    return false
 	}
 }
+

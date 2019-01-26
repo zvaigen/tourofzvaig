@@ -1,3 +1,32 @@
-<p>
-  last-searches works!
-</p>
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="searchData">
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="position">
+      <th mat-header-cell *matHeaderCellDef> No. </th>
+      <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+    </ng-container>
+  
+    <!-- Search Parameters Column -->
+    <ng-container matColumnDef="searchParameters">
+      <th mat-header-cell *matHeaderCellDef> Search Parameters </th>
+      <td mat-cell *matCellDef="let element"> {{element.searchParameters}} </td>
+    </ng-container>
+  
+    <!-- Search Date Column -->
+    <ng-container matColumnDef="searchDate">
+      <th mat-header-cell *matHeaderCellDef> searchDate </th>
+      <td mat-cell *matCellDef="let element"> {{element.searchDate}} </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  
+  <div class="paginator-container">
+    <mat-paginator #paginator 
+    [pageSizeOptions]="[5]" 
+    showFirstLastButtons>
+    </mat-paginator>
+  </div>
+</div>

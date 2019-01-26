@@ -23,12 +23,12 @@
       <span>TourOfZvaig</span>
       <span class="spacer" ></span>
       <div *ngIf= "authService.authenticated else notAuthenticated">
-        <button (click)="Profile()" >Profile</button>
+        <button routerLink="/user-profile" >Profile</button>
         <button (click)="logout()">Logout</button>
       </div> 
       <ng-template #notAuthenticated>
-        <button (click)="register()">Register</button>
-        <button (click)="login()">LogIn</button>
+        <button routerLink="/signup">Register</button>
+        <button routerLink="/signin">LogIn</button>
       </ng-template> 
     </mat-toolbar>
     <ng-content></ng-content>

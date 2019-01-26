@@ -8,7 +8,7 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
 import { LastSearchesComponent } from './components/last-searches/last-searches.component'
 
 const routes: Routes = [
-	{ path: '', redirectTo: '/signin', pathMatch: 'full' },
+	{ path: '', redirectTo: '/asteroids-search', pathMatch: 'full' },
 	{ path: 'signup', component: SignupComponent },
 	{ path: 'signin', component: SigninComponent },
 	{ path: 'last-searches', component: LastSearchesComponent, canActivate: [ AuthGuardService ] },
